@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Assignment-L1 Scenario 3</title>
+<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+</head>
+
+<body>
+<div>
+Employee Ids:
+<ul id="emp">
+<li>121034</li>
+<li>358937</li>
+<li>100004</li>
+<li>976221</li>
+<li>829390</li>
+<li>918375</li>
+<li>991835</li>
+<li>333444</li>
+<li>123341</li>
+<li>909225</li>
+</ul>
+</div>
+
+<script>
+
+		
+		var empIds = document.getElementById("emp").getElementsByTagName("li");
+		var idList = [];
+		var colors=['cyan','magenta','blue','green']
+		//console.log(empIds);
+		for (var i = 0; i < empIds.length; i++) {
+			idList.push((empIds[i].innerText));
+			if (idList[i].search("5") != -1) {
+				document.getElementsByTagName("li")[i].setAttribute("id",idList[i]);
+				assignColor(idList[i],colors[0]);
+			}
+		}
+		function assignColor(id,color) {
+			var ele = document.getElementById(id);
+			ele.style.background = color;
+} 
+	
+</script>
+</body>
+
+
+</html>
